@@ -10,40 +10,40 @@ cwlVersion: v1.0
 #
 # The Workflow class steps field orchestrates the execution of the application command line and retrieves all the outputs of the processing steps.
 
-  class: Workflow
-  id: main
-  label: Sounder SIPS L1B PGE 
-  doc: Processes Sounder SIPS L1A products into L1B Products
+class: Workflow
+id: main
+label: Sounder SIPS L1B PGE 
+doc: Processes Sounder SIPS L1A products into L1B Products
 
-  requirements:
+requirements:
   - class: ScatterFeatureRequirement
 
-  inputs:
-    input_dir:
-      type: Directory
-      label: L1A Data Directory
-      doc: Directory containing L1A files
+inputs:
+  input_dir:
+    type: Directory
+    label: L1A Data Directory
+    doc: Directory containing L1A files
 
-  steps:
-    l1b_process:
-      run: http://uads-test-dockstore-deploy-lb-1762603872.us-west-2.elb.amazonaws.com:9998/api/ga4gh/trs/v2/tools/%23workflow%2Fgithub.com%2Fnlahaye%2Fsounder-sips-application%2Fsounder_sips_l1b/versions/main/PLAIN-CWL/descriptor/%2Fcwl%2Fl1b_tool.cwl
-      in:
-        input_dir: input_dir
-      out:
-        - output_dir
-        - stdout_file
-        - stderr_file
+steps:
+  l1b_process:
+    run: http://uads-test-dockstore-deploy-lb-1762603872.us-west-2.elb.amazonaws.com:9998/api/ga4gh/trs/v2/tools/%23workflow%2Fgithub.com%2Fnlahaye%2Fsounder-sips-application%2Fsounder_sips_l1b/versions/main/PLAIN-CWL/descriptor/%2Fcwl%2Fl1b_tool.cwl
+    in:
+      input_dir: input_dir
+    out:
+      - output_dir
+      - stdout_file
+      - stderr_file
 
-  outputs:
-    output_dir:
-      outputSource: l1b_process/output_dir
-      type: Directory
-    stdout_file: 
-      outputSource: l1b_process/stdout_file
-      type: File
-    stderr_file:
-      outputSource: l1b_process/stderr_file
-      type: File
+outputs:
+  output_dir:
+    outputSource: l1b_process/output_dir
+    type: Directory
+  stdout_file: 
+    outputSource: l1b_process/stdout_file
+    type: File
+  stderr_file:
+    outputSource: l1b_process/stderr_file
+    type: File
    
 
 $namespaces:

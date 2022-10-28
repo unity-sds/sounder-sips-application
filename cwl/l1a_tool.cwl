@@ -10,47 +10,47 @@ cwlVersion: v1.0
 #
 # The Workflow class steps field orchestrates the execution of the application command line and retrieves all the outputs of the processing steps.
 
-  class: CommandLineTool
-  id: l1a_pge
+class: CommandLineTool
+id: l1a_pge
 
-  requirements:
-    DockerRequirement:
-      dockerPull: public.ecr.aws/unity-ads/sounder_sips_l1a_pge:r0.2.0
+requirements:
+  DockerRequirement:
+    dockerPull: public.ecr.aws/unity-ads/sounder_sips_l1a_pge:r0.2.0
   
-  arguments: [
-    "$(runtime.outdir)/processed_notebook.ipynb",
-    "-p", "input_ephatt_path", "$(inputs.input_ephatt_dir)",
-    "-p", "input_science_path", "$(inputs.input_science_dir)",
-    "-p", "output_path", "$(runtime.outdir)",
-    "-p", "data_static_path", "$(inputs.static_dir)",
-    "-p", "start_datetime", "$(inputs.start_datetime)",
-    "-p", "end_datetime", "$(inputs.end_datetime)",
-  ]
+arguments: [
+  "$(runtime.outdir)/processed_notebook.ipynb",
+  "-p", "input_ephatt_path", "$(inputs.input_ephatt_dir)",
+  "-p", "input_science_path", "$(inputs.input_science_dir)",
+  "-p", "output_path", "$(runtime.outdir)",
+  "-p", "data_static_path", "$(inputs.static_dir)",
+  "-p", "start_datetime", "$(inputs.start_datetime)",
+  "-p", "end_datetime", "$(inputs.end_datetime)",
+]
   
-  inputs:
-    input_ephatt_dir:
-      type: Directory
-    input_science_dir:
-      type: Directory
-    static_dir:
-      type: Directory
-    start_datetime:
-      type: string  
-    end_datetime:
-      type: string  
+inputs:
+  input_ephatt_dir:
+    type: Directory
+  input_science_dir:
+    type: Directory
+  static_dir:
+    type: Directory
+  start_datetime:
+    type: string  
+  end_datetime:
+    type: string  
   
-  outputs:
-    output_dir:
-      type: Directory
-      outputBinding:
-        glob: .
-    stdout_file:
-      type: stdout
-    stderr_file:
-      type: stderr
+outputs:
+  output_dir:
+    type: Directory
+    outputBinding:
+      glob: .
+  stdout_file:
+    type: stdout
+  stderr_file:
+    type: stderr
   
-  stdout: l1a_pge_stdout.txt
-  stderr: l1a_pge_stderr.txt
+stdout: l1a_pge_stdout.txt
+stderr: l1a_pge_stderr.txt
 
 $namespaces:
   s: https://schema.org/

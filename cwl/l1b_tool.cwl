@@ -11,35 +11,35 @@ cwlVersion: v1.0
 # The Workflow class steps field orchestrates the execution of the application command line and retrieves all the outputs of the processing steps.
 
    
-  class: CommandLineTool
-  id: l1b_pge
+class: CommandLineTool
+id: l1b_pge
 
-  requirements:
-    DockerRequirement:
-      dockerPull: public.ecr.aws/unity-ads/sounder_sips_l1b_pge:r0.2.0
+requirements:
+  DockerRequirement:
+    dockerPull: public.ecr.aws/unity-ads/sounder_sips_l1b_pge:r0.2.0
   
-  arguments: [
-    "$(runtime.outdir)/processed_notebook.ipynb",
-    "-p", "input_path", "$(inputs.input_dir)",
-    "-p", "output_path", "$(runtime.outdir)",
-  ]
+arguments: [
+  "$(runtime.outdir)/processed_notebook.ipynb",
+  "-p", "input_path", "$(inputs.input_dir)",
+  "-p", "output_path", "$(runtime.outdir)",
+]
   
-  inputs:
-    input_dir:
-      type: Directory
+inputs:
+  input_dir:
+    type: Directory
   
-  outputs:
-    output_dir:
-      type: Directory
-      outputBinding:
-        glob: .
-    stdout_file:
-      type: stdout
-    stderr_file:
-      type: stderr
+outputs:
+  output_dir:
+    type: Directory
+    outputBinding:
+      glob: .
+  stdout_file:
+    type: stdout
+  stderr_file:
+    type: stderr
   
-  stdout: l1b_pge_stdout.txt
-  stderr: l1b_pge_stderr.txt
+stdout: l1b_pge_stdout.txt
+stderr: l1b_pge_stderr.txt
 
 $namespaces:
   s: https://schema.org/
