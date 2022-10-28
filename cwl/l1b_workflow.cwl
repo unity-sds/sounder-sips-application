@@ -26,7 +26,7 @@ inputs:
 
 steps:
   l1b_process:
-    run: http://uads-test-dockstore-deploy-lb-1762603872.us-west-2.elb.amazonaws.com:9998/api/ga4gh/trs/v2/tools/%23workflow%2Fgithub.com%2Fnlahaye%2Fsounder-sips-application%2Fsounder_sips_l1b/versions/main/PLAIN-CWL/descriptor/%2Fcwl%2Fl1b_tool.cwl
+    run: sounder_sips_l1b
     in:
       input_dir: input_dir
     out:

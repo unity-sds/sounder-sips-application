@@ -12,7 +12,7 @@ cwlVersion: v1.0
 
    
 class: CommandLineTool
-id: l1b_pge
+id: sounder_sips_l1b
 
 requirements:
   DockerRequirement:
