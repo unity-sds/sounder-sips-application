@@ -3,14 +3,29 @@ workflows:
   - name: "sounder_sips_l1a"
     subclass: CWL
     publish: true
-    primaryDescriptorPath: /cwl/l1a_package.cwl
+    primaryDescriptorPath: /cwl/l1a_workflow.cwl
     authors:
       - name: "James McDuffie"
         email: "james.mcduffie@jpl.nasa.gov"
   - name: "sounder_sips_l1b"
     subclass: CWL
     publish: true
-    primaryDescriptorPath: /cwl/l1b_package.cwl
+    primaryDescriptorPath: /cwl/l1b_workflow.cwl
+    authors:
+      - name: "James McDuffie"
+        email: "james.mcduffie@jpl.nasa.gov"
+tools:
+  - name: "sounder_sips_l1a_tool"
+    subclass: CWL
+    publish: true
+    primaryDescriptorPath: /cwl/l1a_tool.cwl
+    authors:
+      - name: "James McDuffie"
+        email: "james.mcduffie@jpl.nasa.gov"
+  - name: "sounder_sips_l1b_tool"
+    subclass: CWL
+    publish: true
+    primaryDescriptorPath: /cwl/l1b_tool.cwl
     authors:
       - name: "James McDuffie"
         email: "james.mcduffie@jpl.nasa.gov"

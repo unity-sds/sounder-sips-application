@@ -10,7 +10,6 @@ cwlVersion: v1.0
 #
 # The Workflow class steps field orchestrates the execution of the application command line and retrieves all the outputs of the processing steps.
 
-$graph:
 - class: Workflow
   id: main
   label: Sounder SIPS L1B PGE 
@@ -27,7 +26,7 @@ $graph:
 
   steps:
     l1b_process:
-      run: "#l1b_pge"
+      run: http://uads-test-dockstore-deploy-lb-1762603872.us-west-2.elb.amazonaws.com:9998/api/ga4gh/trs/v2/tools/%23workflow%2Fgithub.com%2Fnlahaye%2Fsounder-sips-application%2Fsounder_sips_l1b/versions/main/PLAIN-CWL/descriptor/%2Fcwl%2Fl1b_tool.cwl
       in:
         input_dir: input_dir
       out:
@@ -46,35 +45,6 @@ $graph:
       outputSource: l1b_process/stderr_file
       type: File
    
-- class: CommandLineTool
-  id: l1b_pge
-
-  requirements:
-    DockerRequirement:
-      dockerPull: public.ecr.aws/unity-ads/sounder_sips_l1b_pge:r0.2.0
-  
-  arguments: [
-    "$(runtime.outdir)/processed_notebook.ipynb",
-    "-p", "input_path", "$(inputs.input_dir)",
-    "-p", "output_path", "$(runtime.outdir)",
-  ]
-  
-  inputs:
-    input_dir:
-      type: Directory
-  
-  outputs:
-    output_dir:
-      type: Directory
-      outputBinding:
-        glob: .
-    stdout_file:
-      type: stdout
-    stderr_file:
-      type: stderr
-  
-  stdout: l1b_pge_stdout.txt
-  stderr: l1b_pge_stderr.txt
 
 $namespaces:
   s: https://schema.org/
