@@ -4,8 +4,6 @@ workflows:
     subclass: CWL
     publish: true
     primaryDescriptorPath: /cwl/l1a_package.cwl
-    testParameterFiles:
-      - "/no_input.json"
     authors:
       - name: "James McDuffie"
         email: "james.mcduffie@jpl.nasa.gov"
@@ -13,8 +11,6 @@ workflows:
     subclass: CWL
     publish: true
     primaryDescriptorPath: /cwl/l1b_package.cwl
-    testParameterFiles:
-      - "/no_input.json"
     authors:
       - name: "James McDuffie"
         email: "james.mcduffie@jpl.nasa.gov"
