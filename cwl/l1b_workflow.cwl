@@ -26,7 +26,7 @@ inputs:
 
 steps:
   l1b_process:
-    run: sounder-sips-application/sounder_sips_l1a_tool
+    run: l1b_tool.cwl
     in:
       input_dir: input_dir
     out:
