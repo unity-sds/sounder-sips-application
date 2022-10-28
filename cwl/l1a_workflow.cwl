@@ -42,7 +42,7 @@ inputs:
 
 steps:
   l1a_process:
-    run: sounder_sips_l1a
+    run: sounder-sips-application/sounder_sips_l1a_tool
     in:
       input_ephatt_dir: input_ephatt_dir
       input_science_dir: input_science_dir
