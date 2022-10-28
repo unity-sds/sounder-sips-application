@@ -1,0 +1,20 @@
+version: 1.2
+workflows:
+  - name: "sounder_sips_l1a"
+    subclass: CWL
+    publish: true
+    primaryDescriptorPath: /cwl/l1a_package.cwl
+    testParameterFiles:
+      - "/no_input.json"
+    authors:
+      - name: "James McDuffie"
+        email: "james.mcduffie@jpl.nasa.gov"
+  - name: "sounder_sips_l1b"
+    subclass: CWL
+    publish: true
+    primaryDescriptorPath: /cwl/l1b_package.cwl
+    testParameterFiles:
+      - "/no_input.json"
+    authors:
+      - name: "James McDuffie"
+        email: "james.mcduffie@jpl.nasa.gov"
