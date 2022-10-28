@@ -11,7 +11,7 @@ cwlVersion: v1.0
 # The Workflow class steps field orchestrates the execution of the application command line and retrieves all the outputs of the processing steps.
 
    
-- class: CommandLineTool
+  class: CommandLineTool
   id: l1b_pge
 
   requirements:

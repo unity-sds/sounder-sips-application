@@ -10,7 +10,7 @@ cwlVersion: v1.0
 #
 # The Workflow class steps field orchestrates the execution of the application command line and retrieves all the outputs of the processing steps.
 
-- class: Workflow
+  class: Workflow
   id: main
   label: Sounder SIPS L1B PGE 
   doc: Processes Sounder SIPS L1A products into L1B Products
