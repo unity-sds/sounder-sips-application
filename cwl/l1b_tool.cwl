@@ -16,7 +16,7 @@ id: sounder_sips_l1b
 
 requirements:
   - class: DockerRequirement
-    dockerPull: public.ecr.aws/unity-ads/sounder_sips_l1a_pge:r0.2.0
+    dockerPull: public.ecr.aws/unity-ads/sounder_sips_l1b_pge:r0.2.0
   
 arguments: [
   "$(runtime.outdir)/processed_notebook.ipynb",
@@ -55,7 +55,7 @@ s:codeRepository:
 s:contributor: 
   - name: Luca Cinquini
 s:dateCreated: 2022-04-14
-s:keywords: l1a, l1b, thermal, sips, sounder
+s:keywords: l1b, thermal, sips, sounder
 s:license: All Rights Reserved
 s:releaseNotes: Initial release
 s:version: 0.1
