@@ -16,7 +16,7 @@ id: sounder_sips_l1b
 
 requirements:
   - class DockerRequirement:
-    dockerPull: "public.ecr.aws/unity-ads/sounder_sips_l1b_pge:r0.2.0"
+    dockerPull: 'public.ecr.aws/unity-ads/sounder_sips_l1b_pge:r0.2.0'
   
 arguments: [
   "$(runtime.outdir)/processed_notebook.ipynb",
