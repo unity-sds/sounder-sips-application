@@ -14,21 +14,23 @@ workflows:
     authors:
       - name: "James McDuffie"
         email: "james.mcduffie@jpl.nasa.gov"
-tools:
-  - name: "sounder_sips_l1a_tool"
-    subclass: CWL
-    publish: true
-    primaryDescriptorPath: /cwl/l1a_tool.cwl
-    authors:
-      - name: "James McDuffie"
-        email: "james.mcduffie@jpl.nasa.gov"
-  - name: "sounder_sips_l1b_tool"
-    subclass: CWL
-    publish: true
-    primaryDescriptorPath: /cwl/l1b_tool.cwl
-    authors:
-      - name: "James McDuffie"
-        email: "james.mcduffie@jpl.nasa.gov"
+
+#Registering tools that are used in workflows currently creates link in workflow that points to "dockstore.org"
+#tools:
+#  - name: "sounder_sips_l1a_tool"
+#    subclass: CWL
+#    publish: true
+#    primaryDescriptorPath: /cwl/l1a_tool.cwl
+#    authors:
+#      - name: "James McDuffie"
+#        email: "james.mcduffie@jpl.nasa.gov"
+#  - name: "sounder_sips_l1b_tool"
+#    subclass: CWL
+#    publish: true
+#    primaryDescriptorPath: /cwl/l1b_tool.cwl
+#    authors:
+#      - name: "James McDuffie"
+#        email: "james.mcduffie@jpl.nasa.gov"
 
 
 
