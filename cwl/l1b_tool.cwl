@@ -15,8 +15,8 @@ class: CommandLineTool
 id: sounder_sips_l1b
 
 requirements:
-  DockerRequirement:
-    dockerPull: public.ecr.aws/unity-ads/sounder_sips_l1b_pge:r0.2.0
+  -clas DockerRequirement:
+    dockerPull: "public.ecr.aws/unity-ads/sounder_sips_l1b_pge:r0.2.0"
   
 arguments: [
   "$(runtime.outdir)/processed_notebook.ipynb",

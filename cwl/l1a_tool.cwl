@@ -13,9 +13,11 @@ cwlVersion: v1.0
 class: CommandLineTool
 id: sounder_sips_l1a
 
+
+
 requirements:
-  DockerRequirement:
-    dockerPull: public.ecr.aws/unity-ads/sounder_sips_l1a_pge:r0.2.0
+  -class: DockerRequirement:
+    dockerPull: "public.ecr.aws/unity-ads/sounder_sips_l1a_pge:r0.2.0"
   
 arguments: [
   "$(runtime.outdir)/processed_notebook.ipynb",
