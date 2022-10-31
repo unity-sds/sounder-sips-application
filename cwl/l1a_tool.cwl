@@ -16,7 +16,7 @@ id: sounder_sips_l1a
 
 
 requirements:
-  - class: DockerRequirement:
+  - class: DockerRequirement
     dockerPull: public.ecr.aws/unity-ads/sounder_sips_l1a_pge:r0.2.0
   
 arguments: [
